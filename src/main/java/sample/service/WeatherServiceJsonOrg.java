@@ -47,7 +47,7 @@ public class WeatherServiceJsonOrg implements WeatherService {
             WeatherCondition weatherCondition = new WeatherCondition(conditionText,code,iconUrl);
             weather.setDay(isDay);
             weather.setWeatherCondition(weatherCondition);
-            //weather.setLastUpdated(lastUpdated);
+            weather.setLastUpdated(lastUpdated);
             weather.setTemperatureInCelsius(temperatureInCelsius);
             weather.setLocation(location);
             weather.setPressureMb(pressureMb);
