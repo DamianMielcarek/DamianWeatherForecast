@@ -1,6 +1,6 @@
 package sample.model;
 
-import java.time.LocalDateTime;
+//import java.time.String;
 
 /**
  * Created by Lenovo on 2016-11-17.
@@ -8,24 +8,24 @@ import java.time.LocalDateTime;
 public class Weather {
 
     private double temperatureInCelsius;
-    private LocalDateTime lastUpdated;
-    private double feelslikeTemperatureInCelsius;
-    private String iconUrl;
+    private String lastUpdated;
+    private double feelsLikeTemperatureInCelsius;
     private boolean isDay;
     private double pressureMb;
     private String location;
     private WeatherCondition weatherCondition;
 
-    public Weather(double temperatureInCelsius, LocalDateTime lastUpdated, double feelslikeTemperatureInCelsius, String iconUrl, boolean isDay, double pressureMb, String location, WeatherCondition weatherCondition) {
+    public Weather(double temperatureInCelsius, String lastUpdated, double feelsLikeTemperatureInCelsius, boolean isDay, double pressureMb, String location, WeatherCondition weatherCondition) {
         this.temperatureInCelsius = temperatureInCelsius;
         this.lastUpdated = lastUpdated;
-        this.feelslikeTemperatureInCelsius = feelslikeTemperatureInCelsius;
-        this.iconUrl = iconUrl;
+        this.feelsLikeTemperatureInCelsius = feelsLikeTemperatureInCelsius;
         this.isDay = isDay;
         this.pressureMb = pressureMb;
         this.location = location;
         this.weatherCondition = weatherCondition;
     }
+
+    public Weather(){};
 
     public double getTemperatureInCelsius() {
         return temperatureInCelsius;
@@ -35,28 +35,20 @@ public class Weather {
         this.temperatureInCelsius = temperatureInCelsius;
     }
 
-    public LocalDateTime getLastUpdated() {
+    public String getLastUpdated() {
         return lastUpdated;
     }
 
-    public void setLastUpdated(LocalDateTime lastUpdated) {
+    public void setLastUpdated(String lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 
-    public double getFeelslikeTemperatureInCelsius() {
-        return feelslikeTemperatureInCelsius;
+    public double getFeelsLikeTemperatureInCelsius() {
+        return feelsLikeTemperatureInCelsius;
     }
 
-    public void setFeelslikeTemperatureInCelsius(double feelslikeTemperatureInCelsius) {
-        this.feelslikeTemperatureInCelsius = feelslikeTemperatureInCelsius;
-    }
-
-    public String getIconUrl() {
-        return iconUrl;
-    }
-
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
+    public void setFeelsLikeTemperatureInCelsius(double feelsLikeTemperatureInCelsius) {
+        this.feelsLikeTemperatureInCelsius = feelsLikeTemperatureInCelsius;
     }
 
     public boolean isDay() {
@@ -89,5 +81,18 @@ public class Weather {
 
     public void setWeatherCondition(WeatherCondition weatherCondition) {
         this.weatherCondition = weatherCondition;
+    }
+
+    @Override
+    public String toString() {
+        return "Weather{" +
+                "temperatureInCelsius=" + temperatureInCelsius +
+                ", lastUpdated=" + lastUpdated +
+                ", feelsLikeTemperatureInCelsius=" + feelsLikeTemperatureInCelsius +
+                ", isDay=" + isDay +
+                ", pressureMb=" + pressureMb +
+                ", location='" + location + '\'' +
+                ", weatherCondition=" + weatherCondition +
+                '}';
     }
 }
